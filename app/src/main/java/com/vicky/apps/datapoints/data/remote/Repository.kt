@@ -25,4 +25,6 @@ class Repository @Inject constructor(private val apiService: ApiService, private
         albumDao.insert(word)
     }
 
+    fun getCount(): LiveData<Int> = albumDao.getRowCount()
+
 }

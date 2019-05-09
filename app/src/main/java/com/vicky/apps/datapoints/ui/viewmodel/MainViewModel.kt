@@ -19,15 +19,15 @@ class MainViewModel(private val repository: Repository,
 
 
 
-
+    private var albums: List<Albums> = ArrayList()
 
     private val apiResponse: MutableLiveData<List<Albums>> = MutableLiveData()
 
-    private val localResponse: MutableLiveData<List<Albums>> = MutableLiveData()
-
     fun getApiSubscription():MutableLiveData<List<Albums>> = apiResponse
 
-    fun getlocalSubscription():MutableLiveData<List<Albums>> = localResponse
+    fun getAlbumsList() = albums
+
+    fun setAlbumsList(albums: List<Albums>) { this.albums = albums }
 
     private lateinit var compositeDisposable: CompositeDisposable
 
@@ -64,6 +64,9 @@ class MainViewModel(private val repository: Repository,
         repository.insert(albums)
     }
 
+    fun getCount(): LiveData<Int>{
+        return repository.getCount()
+    }
 
 
 

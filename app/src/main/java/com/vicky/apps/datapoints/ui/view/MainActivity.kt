@@ -32,15 +32,22 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initializeValues()
-        callApiAndFetchData()
         checkDataInLocal()
         //inilializingRecyclerView()
-
 
     }
 
     private fun checkDataInLocal() {
+        viewModel.getCount().observe(this, Observer {
+            if(it > 0){ fetchDataFromLocal() }
+            else{ callApiAndFetchData() }
+        })
+    }
 
+    private fun fetchDataFromLocal() {
+        viewModel.observeDataFromLocal().observe(this, Observer {
+            Log.i("count",it.size.toString())
+        })
     }
 
     private fun callApiAndFetchData() {
@@ -75,7 +82,7 @@ class MainActivity : BaseActivity() {
 
 
     private fun successCallback(album: List<Albums>){
-       Log.i("count", album.size.toString())
+      viewModel.insert(album)
     }
     private fun failureCallback(){
         Toast.makeText(this,"API failed",Toast.LENGTH_LONG).show()

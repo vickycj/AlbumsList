@@ -13,7 +13,7 @@ import com.vicky.apps.datapoints.data.room.entity.Albums
 @Dao
 interface AlbumsDao {
 
-    @Query("SELECT * from "+AppConstants.TABLE_NAME+" ORDER BY "+AppConstants.COLUMN_TITLE+" ASC")
+    @Query("SELECT * from ${AppConstants.TABLE_NAME} ORDER BY ${AppConstants.COLUMN_TITLE} ASC")
     fun getAllAlbums(): LiveData<List<Albums>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -21,4 +21,9 @@ interface AlbumsDao {
 
     @Query("DELETE FROM "+AppConstants.TABLE_NAME+ "")
     fun deleteAll()
-}
+
+
+    @Query("SELECT COUNT(${AppConstants.COLUMN_TITLE}) FROM ${AppConstants.TABLE_NAME}")
+    fun getRowCount(): LiveData<Int>
+
+   }
