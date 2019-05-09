@@ -2,20 +2,15 @@ package com.vicky.apps.datapoints.ui.viewmodel
 
 import android.app.Application
 import android.util.Log
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import com.vicky.apps.datapoints.common.SchedulerProvider
 import com.vicky.apps.datapoints.data.remote.Repository
 import com.vicky.apps.datapoints.data.room.entity.Albums
-import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 
 
 class MainViewModel(private val repository: Repository,
@@ -63,9 +58,9 @@ class MainViewModel(private val repository: Repository,
         return repository.getDataFromLocal()
     }
 
-   /* fun insert(albums: List<Albums>) = viewModelScope.launch(Dispatchers.IO) {
+    fun insert(albums: List<Albums>) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(albums)
-    }*/
+    }
 
 
 
