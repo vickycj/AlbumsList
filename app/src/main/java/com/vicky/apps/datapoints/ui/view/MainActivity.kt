@@ -10,14 +10,12 @@ import com.vicky.apps.datapoints.common.ViewModelProviderFactory
 import com.vicky.apps.datapoints.ui.adapter.DataAdapter
 import com.vicky.apps.datapoints.ui.viewmodel.MainViewModel
 import javax.inject.Inject
-import android.util.Log
 import com.vicky.apps.datapoints.R
 import com.vicky.apps.datapoints.data.room.entity.Albums
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : BaseActivity() {
-
 
 
     @Inject
