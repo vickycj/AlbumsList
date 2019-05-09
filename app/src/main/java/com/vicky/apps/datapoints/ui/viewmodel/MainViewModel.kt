@@ -14,8 +14,10 @@ import kotlinx.coroutines.launch
 
 
 class MainViewModel(private val repository: Repository,
-                    private val schedulerProvider: SchedulerProvider,
-                    private val application1: Application): AndroidViewModel(application1) {
+                    private val schedulerProvider: SchedulerProvider
+                   ): ViewModel() {
+
+
 
 
 
