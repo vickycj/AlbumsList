@@ -13,6 +13,7 @@ import javax.inject.Inject
 import android.util.Log
 import com.vicky.apps.datapoints.R
 import com.vicky.apps.datapoints.data.room.entity.Albums
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : BaseActivity() {
@@ -46,7 +47,8 @@ class MainActivity : BaseActivity() {
 
     private fun fetchDataFromLocal() {
         viewModel.observeDataFromLocal().observe(this, Observer {
-            Log.i("count",it.size.toString())
+            viewModel.setAlbumsList(it)
+            adapter.updateData(viewModel.getAlbumsList())
         })
     }
 
@@ -63,12 +65,9 @@ class MainActivity : BaseActivity() {
     }
 
     private fun inilializingRecyclerView() {
-
+        recyclerView = recycler_view
         recyclerView.layoutManager = GridLayoutManager(this, 3)
-
-
-        adapter = DataAdapter()
-
+        adapter = DataAdapter(viewModel.getAlbumsList())
         recyclerView.adapter = adapter
     }
 
