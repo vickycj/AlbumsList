@@ -7,7 +7,7 @@ import com.vicky.apps.datapoints.base.AppConstants
 
 
 @Entity(tableName = AppConstants.TABLE_NAME)
-data class Albums(@ColumnInfo(name = "user") val user: Int,
+data class Albums(@ColumnInfo(name = "user") val userId: Int,
                   @PrimaryKey @ColumnInfo(name = "id") val id: Int,
                   @ColumnInfo(name = "title")val title: String) {
 }

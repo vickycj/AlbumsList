@@ -59,13 +59,13 @@ class MainActivity : BaseActivity() {
 
         viewModel.setCompositeData(compositeDisposable)
 
-        viewModel.getSubscription().observe(this, Observer {
+        /*viewModel.getSubscription().observe(this, Observer {
             if(it){
                 successCallback()
             }else{
                 failureCallback()
             }
-        })
+        })*/
 
 
 

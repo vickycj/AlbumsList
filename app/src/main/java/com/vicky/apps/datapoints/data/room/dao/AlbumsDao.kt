@@ -1,5 +1,6 @@
 package com.vicky.apps.datapoints.data.room.dao
 
+
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
