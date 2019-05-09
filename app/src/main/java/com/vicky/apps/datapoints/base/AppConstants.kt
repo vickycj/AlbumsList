@@ -7,4 +7,6 @@ object AppConstants {
 
     const val COLUMN_TITLE = "title"
 
+    const val DATABASE_NAME = "album_database"
+
 }
