@@ -6,20 +6,20 @@ Architecture Design Pattern - MVVM (Model View ViewModel)
 Tech Stack
 -----------
 
-- Programming language    - Kotlin
-- NetWork API             - RetroFit
-- Dependancy Injection    - Dagger 2 for Kotlin
-- Offline Storing         - Room ORM (Arch components)
-- Streams                 - RxAndroid and LiveData
-- Architecture Components - ViewModel, LiveData, Android JetPAck Components
-- Testing Framework       - Junit, Mockito , Expresso, AndroidJunit4
+- Programming language    - **Kotlin**
+- NetWork API             - **RetroFit**
+- Dependancy Injection    - **Dagger 2 for Kotlin**
+- Offline Storing         - **Room ORM (Arch components)**
+- Streams                 - **RxAndroid and LiveData**
+- Architecture Components - **ViewModel, LiveData, Android JetPAck Components**
+- Testing Framework       - **Junit, Mockito , Expresso, AndroidJunit4**
 
 App Usage
 ----------
 
---Home page - Checks the local/offline data is avalilabe or not using the table count
---Home page - if count is 0 then Fetches data from the server and stores it in the ROOM SQL lite
---Home page - else it observes the room data table, hence any insertion will update the UI automatically using LIveData
+1. Home page - Checks the local/offline data is avalilabe or not using the table count
+2. Home page - if count is 0 then Fetches data from the server and stores it in the ROOM SQL lite
+3. Home page - else it observes the room data table, hence any insertion will update the UI automatically using LIveData
 
 
 Future Improvements
