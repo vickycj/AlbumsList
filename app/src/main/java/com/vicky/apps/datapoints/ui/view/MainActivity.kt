@@ -33,7 +33,7 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
         initializeValues()
         checkDataInLocal()
-        //inilializingRecyclerView()
+        inilializingRecyclerView()
 
     }
 
